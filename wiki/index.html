@@ -519,7 +519,7 @@ Error message and password prompt
 
 <li>Quote #187540- Campbell Scientific</li>
 
-<li>Sample Task</li>
+<li>SampleTask</li>
 
 <li>Send to EEMS</li>
 
@@ -544,12 +544,6 @@ Error message and password prompt
 <li>Table Macro</li>
 
 <li>Test from phone</li>
-
-<li>TiddlyTools/Timer</li>
-
-<li>TiddlyTools/Timer/action-timeout.js</li>
-
-<li>TiddlyTools/Timer/Setup</li>
 
 <li>Trouble Tickets to Enter</li>
 
@@ -10093,7 +10087,7 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[TiddlyTools/Timer/action-timeout.js]]</pre>
+# [[SampleTask]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10264,8 +10258,8 @@ Error message and password prompt
 <div created="20200711012657852" creator="tanaberh " modified="20200719174155813" modifier="tanaberh " title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Recent</pre>
 </div>
-<div created="20200710232520927" creator="tanaberh " modified="20200723184130475" modifier="tanaberh" title="$:/state/tab/sidebar--595412856">
-<pre>Contents</pre>
+<div created="20200710232520927" creator="tanaberh " modified="20200723195140456" modifier="tanaberh" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20200719194918690" modified="20200719194918690" title="$:/state/tables/Sort/Row/total">
 <pre>title</pre>
@@ -10361,12 +10355,12 @@ Error message and password prompt
 <pre>close</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>yes</pre>
+<pre>no</pre>
 </div>
 <div created="20200711013035436" creator="T" modified="20200723184111332" modifier="tanaberh" title="$:/status/UserName">
 <pre>tanaberh</pre>
 </div>
-<div created="20200723194122229" creator="tanaberh" list="[[Sample Task]] $:/Import TiddlyTools/Timer/Setup TiddlyTools/Timer WeekAhead [[7/23/2020: Data &amp; Field Ops Meeting]] [[Supply Requests]] [[Trouble Tickets to Enter]]" modified="20200723195033007" modifier="tanaberh" title="$:/StoryList">
+<div created="20200723195217531" creator="tanaberh" list="$:/Import SampleTask WeekAhead [[Supply Requests]] [[Trouble Tickets to Enter]]" modified="20200723195217531" modifier="tanaberh" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200718223743782" creator="tanaberh" modified="20200718223749139" modifier="tanaberh" title="$:/temp/advancedsearch">
@@ -10442,8 +10436,8 @@ Error message and password prompt
 <div created="20200711215439514" creator="tanaberh " modified="20200711215524239" modifier="tanaberh " title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20200711145044856" creator="tanaberh " modified="20200723183707034" modifier="tanaberh" title="$:/temp/search">
-<pre></pre>
+<div created="20200711145044856" creator="tanaberh " modified="20200723195156641" modifier="tanaberh" title="$:/temp/search">
+<pre>timer</pre>
 </div>
 <div created="20200711013148679" creator="tanaberh " modified="20200711215948080" modifier="tanaberh " title="$:/theme">
 <pre>$:/themes/tiddlywiki/vanilla</pre>
@@ -11068,11 +11062,14 @@ NL241-ST-SW $393.60 x 3 = $1180.80 + 12.85 (Freight) = $1193.65
 
 Hygiene 48 request Number: 27341 (7/20/2020)</pre>
 </div>
-<div button="start" created="20200723194900767" creator="tanaberh" elapsedlist="5.431" modified="20200723195049438" modifier="tanaberh" startlist="20200723155050886" stoplist="20200723155056317" tags="" title="Sample Task" totallist="5.431">
+<div created="20200717110550625" creator="tanaberh" modified="20200723195223136" modifier="tanaberh" tags="" title="SampleTask">
 <pre>@@font-size:200%;{{||TiddlyTools/Timer/DigitalClock}}@@
 
 &lt;&lt;timer&gt;&gt;
-</pre>
+----
+!!Another Task
+&lt;&lt;timer_buttons AnotherTask&gt;&gt; &lt;&lt;timer_elapsed AnotherTask&gt;&gt;
+&lt;&lt;timer_history AnotherTask&gt;&gt;</pre>
 </div>
 <div created="20200717234728590" creator="tanaberh" modified="20200719225643824" modifier="tanaberh" tags="NED TroubleTicket eems" title="Send to EEMS">
 <pre>* FL05 - Complete ETI with shell, chamber, base, cap ring (7/16/2020)
@@ -11577,264 +11574,6 @@ $:/state/tables/Sort/$(RowOrColumn)$/$(FieldsList)$
 \end</pre>
 </div>
 <div created="20200720162055673" modified="20200720162105932" tags="" title="Test from phone">
-<pre></pre>
-</div>
-<div created="20200712174503125" creator="tanaberh" modified="20200723194845787" modifier="tanaberh" tags="$:/tags/Macro" title="TiddlyTools/Timer">
-<pre>\define ticker() $:/temp/ticker/$(currentTiddler)$
-
-\define ticker_start()
-&lt;$tiddler tiddler=&lt;&lt;ticker&gt;&gt;&gt;
-&lt;$vars time=&lt;&lt;now YYYY0MM0DD0hh0mm0ss0XXX&gt;&gt;&gt;
-&lt;$action-setfield $timestamp=&quot;no&quot; started=&lt;&lt;time&gt;&gt; text=&lt;&lt;time&gt;&gt; go=&quot;go&quot; /&gt;
-&lt;&lt;ticker_actions&gt;&gt;
-\end
-
-\define ticker_actions()
-&lt;$action-timeout delay=&quot;1000&quot; actions=&quot;&quot;&quot;
-   &lt;$list filter=&quot;[[$(currentTiddler)$]is[tiddler]]&quot;&gt;
-      &lt;$action-setfield $timestamp=&quot;no&quot; text=&lt;&lt;now YYYY0MM0DD0hh0mm0ss0XXX&gt;&gt; /&gt;
-      &lt;$reveal default={{!!go}} type=&quot;match&quot; text=&quot;go&quot;&gt; &lt;&lt;ticker_actions&gt;&gt; &lt;/$reveal&gt;
-   &lt;/$list&gt;
-&quot;&quot;&quot; /&gt;
-\end
-
-\define ticker_show()
-&lt;$tiddler tiddler=&lt;&lt;ticker&gt;&gt;&gt;
-&lt;$vars started={{!!started}} stopped={{!!text}}&gt;
-&lt;$vars 
-   msec={{{ [&lt;started&gt;split[]last[3]join[]divide[1000]] }}}
-    sec={{{ [&lt;started&gt;split[]butlast[3]last[2]join[]] }}}
-    min={{{ [&lt;started&gt;split[]butlast[5]last[2]join[]multiply[60]] }}}
-   hour={{{ [&lt;started&gt;split[]butlast[7]last[2]join[]multiply[3600]] }}}
-    day={{{ [&lt;started&gt;split[]butlast[9]last[2]join[]multiply[86400]] }}}&gt;
-&lt;$vars start={{{ [&lt;msec&gt;add&lt;sec&gt;add&lt;min&gt;add&lt;hour&gt;add&lt;day&gt;] }}}&gt;
-&lt;$vars
-   msec={{{ [&lt;stopped&gt;split[]last[3]join[]divide[1000]] }}}
-    sec={{{ [&lt;stopped&gt;split[]butlast[3]last[2]join[]] }}}
-    min={{{ [&lt;stopped&gt;split[]butlast[5]last[2]join[]multiply[60]] }}}
-   hour={{{ [&lt;stopped&gt;split[]butlast[7]last[2]join[]multiply[3600]] }}}
-    day={{{ [&lt;stopped&gt;split[]butlast[9]last[2]join[]multiply[86400]] }}}&gt;
-&lt;$vars stop={{{ [&lt;msec&gt;add&lt;sec&gt;add&lt;min&gt;add&lt;hour&gt;add&lt;day&gt;] }}}&gt;
-&lt;$vars elapsed={{{ [&lt;stop&gt;subtract&lt;start&gt;multiply[1000]trunc[]divide[1000]] }}}&gt;
-&lt;$vars     min={{{ [&lt;elapsed&gt;divide[60]trunc[]] }}}&gt;
-&lt;$vars  minsec={{{ [&lt;min&gt;multiply[60]] }}}&gt;
-&lt;$vars     sec={{{ [&lt;elapsed&gt;subtract&lt;minsec&gt;trunc[]] }}}&gt;
-&lt;&lt;min&gt;&gt; minutes &lt;&lt;sec&gt;&gt; seconds
-\end
-
-\define ticker_stop()
-&lt;$action-deletetiddler $tiddler=&lt;&lt;ticker&gt;&gt; /&gt;
-\end
-
-\define timer_start()
-&lt;$button actions=&quot;&quot;&quot;
-   &lt;$vars started=&lt;&lt;now YYYY0MM0DD0hh0mm0ss0XXX&gt;&gt;&gt;
-   &lt;$list filter=&quot;[&lt;currentTiddler&gt;is[missing]]&quot;&gt; &lt;$action-setfield $tiddler=&lt;&lt;currentTiddler&gt;&gt; button=&quot;stop&quot; /&gt; &lt;/$list&gt;
-   &lt;$action-setfield $timestamp=&quot;no&quot; startlist={{{ [{!!startlist}addsuffix[ ]addsuffix&lt;started&gt;trim[]] }}}/&gt;
-   &lt;$action-setfield $timestamp=&quot;no&quot; button=&quot;stop&quot;/&gt;
-   &lt;&lt;ticker_start&gt;&gt;
-&quot;&quot;&quot;&gt; start
-&lt;/$button&gt;
-\end
-
-\define timer_stop()
-&lt;$button actions=&quot;&quot;&quot;
-   &lt;$vars started={{{ [enlist{!!startlist}last[]] }}}&gt;
-   &lt;$vars stopped=&lt;&lt;now YYYY0MM0DD0hh0mm0ss0XXX&gt;&gt;&gt;
-   &lt;$vars 
-      msec={{{ [&lt;started&gt;split[]last[3]join[]divide[1000]] }}}
-       sec={{{ [&lt;started&gt;split[]butlast[3]last[2]join[]] }}}
-       min={{{ [&lt;started&gt;split[]butlast[5]last[2]join[]multiply[60]] }}}
-      hour={{{ [&lt;started&gt;split[]butlast[7]last[2]join[]multiply[3600]] }}}
-       day={{{ [&lt;started&gt;split[]butlast[9]last[2]join[]multiply[86400]] }}}&gt;
-   &lt;$vars start={{{ [&lt;msec&gt;add&lt;sec&gt;add&lt;min&gt;add&lt;hour&gt;add&lt;day&gt;] }}}&gt;
-   &lt;$vars
-      msec={{{ [&lt;stopped&gt;split[]last[3]join[]divide[1000]] }}}
-       sec={{{ [&lt;stopped&gt;split[]butlast[3]last[2]join[]] }}}
-       min={{{ [&lt;stopped&gt;split[]butlast[5]last[2]join[]multiply[60]] }}}
-      hour={{{ [&lt;stopped&gt;split[]butlast[7]last[2]join[]multiply[3600]] }}}
-       day={{{ [&lt;stopped&gt;split[]butlast[9]last[2]join[]multiply[86400]] }}}&gt;
-   &lt;$vars stop={{{ [&lt;msec&gt;add&lt;sec&gt;add&lt;min&gt;add&lt;hour&gt;add&lt;day&gt;] }}}&gt;
-   &lt;$vars elapsed={{{ [&lt;stop&gt;subtract&lt;start&gt;multiply[1000]trunc[]divide[1000]] }}}&gt;
-   &lt;$vars   total={{{ [enlist{!!totallist}] ~[[0]] +[last[]add&lt;elapsed&gt;multiply[1000]trunc[]divide[1000]] }}}&gt;
-   &lt;$action-setfield $timestamp=&quot;no&quot;    stoplist={{{ [{!!stoplist}addsuffix[ ]addsuffix&lt;stopped&gt;trim[]] }}}/&gt;
-   &lt;$action-setfield $timestamp=&quot;no&quot; elapsedlist={{{ [{!!elapsedlist}addsuffix[ ]addsuffix&lt;elapsed&gt;trim[]] }}}/&gt;
-   &lt;$action-setfield $timestamp=&quot;no&quot;   totallist={{{ [{!!totallist}addsuffix[ ]addsuffix&lt;total&gt;trim[]] }}}/&gt;
-   &lt;$action-setfield $timestamp=&quot;no&quot; button=&quot;start&quot;/&gt;
-   &lt;&lt;ticker_stop&gt;&gt;
-&quot;&quot;&quot;&gt; stop
-&lt;/$button&gt;
-\end
-
-\define timer_reset()
-&lt;$button&gt; reset
-   &lt;$action-setfield $timestamp=&quot;no&quot; $field=&quot;startlist&quot;   /&gt;
-   &lt;$action-setfield $timestamp=&quot;no&quot; $field=&quot;stoplist&quot;    /&gt;
-   &lt;$action-setfield $timestamp=&quot;no&quot; $field=&quot;elapsedlist&quot; /&gt;
-   &lt;$action-setfield $timestamp=&quot;no&quot; $field=&quot;totallist&quot;   /&gt;
-   &lt;$action-setfield $timestamp=&quot;no&quot; $field=&quot;button&quot;      /&gt;
-   &lt;&lt;ticker_stop&gt;&gt;
-&lt;/$button&gt;
-\end
-
-\define timer_showdate(time)
-&lt;$vars
-   msec={{{ [&lt;$time$&gt;split[]last[3]join[]] }}}
-    sec={{{ [&lt;$time$&gt;split[]butlast[3]last[2]join[]] }}}
-    min={{{ [&lt;$time$&gt;split[]butlast[5]last[2]join[]] }}}
-   hour={{{ [&lt;$time$&gt;split[]butlast[7]last[2]join[]] }}}
-    day={{{ [&lt;$time$&gt;split[]butlast[9]last[2]join[]] }}}
-  month={{{ [&lt;$time$&gt;split[]butlast[11]last[2]join[]] }}}
-   year={{{ [&lt;$time$&gt;split[]butlast[13]join[]] }}}&gt;
-&lt;$vars month={{{ [&lt;month&gt;removeprefix[0]] ~[&lt;month&gt;] }}}&gt;
-&lt;$macrocall $name=&quot;lingo&quot; title={{{ [[Date/Long/Month/]addsuffix&lt;month&gt;] }}}/&gt;
-&lt;$reveal text=&lt;&lt;$time$&gt;&gt; type=&quot;nomatch&quot; default=&quot;&quot;&gt; &lt;&lt;day&gt;&gt; &lt;&lt;year&gt;&gt; &lt;&lt;hour&gt;&gt;:&lt;&lt;min&gt;&gt;:&lt;&lt;sec&gt;&gt;.&lt;&lt;msec&gt;&gt; &lt;/$reveal&gt;
-\end
-
-\define timer_showtime(time)
-&lt;$vars    min={{{ [&lt;$time$&gt;divide[60]trunc[]] }}}&gt;
-&lt;$vars minsec={{{ [&lt;min&gt;multiply[60]] }}}&gt;
-&lt;$vars    sec={{{ [&lt;$time$&gt;subtract&lt;minsec&gt;multiply[1000]trunc[]divide[1000]] }}}&gt;
-&lt;$reveal text=&lt;&lt;$time$&gt;&gt; type=&quot;nomatch&quot; default=&quot;&quot;&gt; &lt;&lt;min&gt;&gt; minutes &lt;&lt;sec&gt;&gt; seconds &lt;/$reveal&gt;
-\end
-
-\define timer_buttons(taskname)
-&lt;$tiddler tiddler={{{ [[$taskname$]!match[]] ~[&lt;currentTiddler&gt;] }}}&gt;
-&lt;$reveal default={{!!button}} type=&quot;nomatch&quot; text=&quot;stop&quot;&gt; &lt;&lt;timer_start&gt;&gt; &lt;&lt;timer_reset&gt;&gt; &lt;/$reveal&gt;
-&lt;$reveal default={{!!button}} type=&quot;match&quot;   text=&quot;stop&quot;&gt; &lt;&lt;timer_stop&gt;&gt;  &lt;&lt;timer_reset&gt;&gt; &lt;/$reveal&gt;
-\end
-
-\define timer_elapsed(taskname)
-&lt;$tiddler tiddler={{{ [[$taskname$]!match[]] ~[&lt;currentTiddler&gt;] }}}&gt;
-&lt;$vars elapsed={{{ [enlist{!!elapsedlist}last[]] }}}&gt;
-&lt;$reveal default={{!!startlist}} type=&quot;nomatch&quot; text=&quot;&quot;&gt;
-   ''elapsed:'' 
-   &lt;$reveal default={{!!button}} type=&quot;match&quot;   text=&quot;stop&quot;&gt; &lt;&lt;ticker_show&gt;&gt;            &lt;/$reveal&gt;
-   &lt;$reveal default={{!!button}} type=&quot;nomatch&quot; text=&quot;stop&quot;&gt; &lt;&lt;timer_showtime elapsed&gt;&gt; &lt;/$reveal&gt;
-&lt;/$reveal&gt;
-\end
-
-\define timer_total(taskname)
-&lt;$tiddler tiddler={{{ [[$taskname$]!match[]] ~[&lt;currentTiddler&gt;] }}}&gt;
-&lt;$vars total={{{ [enlist{!!totallist}last[]] }}}&gt;
-&lt;$reveal text=&lt;&lt;total&gt;&gt; type=&quot;nomatch&quot; default=&quot;&quot;&gt; ''total'': &lt;&lt;timer_showtime total&gt;&gt; &lt;/$reveal&gt;
-\end
-
-\define timer_summary(taskname)
-&lt;$tiddler tiddler={{{ [[$taskname$]!match[]] ~[&lt;currentTiddler&gt;] }}}&gt;
-&lt;$vars
-   started={{{ [enlist{!!startlist}last[]]   }}}
-   stopped={{{ [enlist{!!stoplist}last[]]    }}}
-   elapsed={{{ [enlist{!!elapsedlist}last[]] }}}
-     total={{{ [enlist{!!totallist}last[]]   }}}&gt;
-&lt;$vars stopped={{{ [enlist{!!startlist}count[]] [enlist{!!stoplist}count[]] +[count[]match[1]then&lt;stopped&gt;else[]] }}}&gt;
-&lt;$vars elapsed={{{ [enlist{!!startlist}count[]] [enlist{!!stoplist}count[]] +[count[]match[1]then&lt;elapsed&gt;else[]] }}}&gt;
-
-| !started|&lt;&lt;timer_showdate started&gt;&gt;|
-| !stopped|&lt;&lt;timer_showdate stopped&gt;&gt;|
-| !elapsed|&lt;&lt;timer_showtime elapsed&gt;&gt;|
-|   !total|&lt;&lt;timer_showtime total&gt;&gt;  |
-\end
-
-\define timer_history(taskname)
-&lt;$tiddler tiddler={{{ [[$taskname$]!match[]] ~[&lt;currentTiddler&gt;] }}}&gt;
-&lt;$vars count={{{ [enlist{!!startlist}count[]] }}}&gt;
-&lt;table&gt;
-   &lt;tr&gt;&lt;th&gt;#&lt;/th&gt;&lt;th&gt;started&lt;/th&gt;&lt;th&gt;stopped&lt;/th&gt;&lt;th&gt;elapsed&lt;/th&gt;&lt;th&gt;total&lt;/th&gt;&lt;/tr&gt;
-   &lt;$list filter=&quot;[range&lt;count&gt;]&quot; variable=&quot;item&quot;&gt;
-      &lt;tr&gt;
-         &lt;$vars
-            started={{{ [enlist{!!startlist}nth&lt;item&gt;]   }}}
-            stopped={{{ [enlist{!!stoplist}nth&lt;item&gt;]    }}}
-            elapsed={{{ [enlist{!!elapsedlist}nth&lt;item&gt;] }}}
-              total={{{ [enlist{!!totallist}nth&lt;item&gt;]   }}}&gt;
-         &lt;td&gt;&lt;&lt;item&gt;&gt;&lt;/td&gt;
-         &lt;td&gt;&lt;&lt;timer_showdate started&gt;&gt;&lt;/td&gt;
-         &lt;td&gt;&lt;&lt;timer_showdate stopped&gt;&gt;&lt;/td&gt;
-         &lt;td&gt;&lt;&lt;timer_showtime elapsed&gt;&gt;&lt;/td&gt;
-         &lt;td&gt;&lt;&lt;timer_showtime total&gt;&gt;&lt;/td&gt;
-         &lt;/$vars&gt;
-      &lt;/tr&gt;
-   &lt;/$list&gt;
-&lt;/table&gt;
-\end
-
-\define timer(taskname)
-&lt;$tiddler tiddler={{{ [[$taskname$]!match[]] ~[&lt;currentTiddler&gt;] }}}&gt;
-&lt;&lt;timer_buttons&gt;&gt; &lt;&lt;timer_elapsed&gt;&gt; &lt;&lt;timer_total&gt;&gt;
-&lt;&lt;timer_summary&gt;&gt;
-&lt;&lt;timer_history&gt;&gt;
-\end</pre>
-</div>
-<div created="20150728060155235" modified="20200723075845587" module-type="widget" tags="" title="TiddlyTools/Timer/action-timeout.js" type="application/javascript">
-<pre>/*\
-title: action-timeout.js
-type: application/javascript
-module-type: widget
-author: Eric Shulman elsdesign@gmail.com
-revision: 1.1
-
-widget to trigger actions after a delay
-
-params (default):
-delay       = delay time (msec)
-actions     = wikitext/actions to invoke after delay
-autostart   = if &quot;go&quot;, timeout is started when widget is rendered
-\*/
-
-(function(){
-
-/*jslint node: true, browser: true */
-/*global $tw: false */
-&quot;use strict&quot;;
-var Widget = require(&quot;$:/core/modules/widgets/widget.js&quot;).widget;
-
-var TimeoutWidget= function(parseTreeNode,options) {
-	this.initialise(parseTreeNode,options);
-};
-
-TimeoutWidget.prototype = new Widget();
-
-TimeoutWidget.prototype.render = function(parent,nextSibling) {
-	this.computeAttributes();
-	this.execute();
-	if (this.autostart==&quot;go&quot;) this.invokeAction();
-};
-
-TimeoutWidget.prototype.execute = function() {
-	this.delay     = this.getAttribute(&quot;delay&quot;,&quot;1000&quot;);
-	this.actions   = this.getAttribute(&quot;actions&quot;,  &quot;&quot;);
-	this.autostart = this.getAttribute(&quot;autostart&quot;,&quot;&quot;);
-};
-
-TimeoutWidget.prototype.refresh = function(changedTiddlers) {
-	var changedAttributes = this.computeAttributes();
-	if(Object.keys(changedAttributes).length &gt; 0) {
-		this.refreshSelf();
-		return true;
-	}
-	return this.refreshChildren(changedTiddlers);
-};
-
-TimeoutWidget.prototype.allowActionPropagation = function() {
-	return false;
-};
-
-TimeoutWidget.prototype.invokeAction = function(triggeringWidget,event) {
-	var self=this;
-	this.makeChildWidgets();
-	setTimeout(function() {
-		self.invokeActions(self,event);
-		self.invokeActionString(self.actions,self,event);
-	}, self.delay);
-	return true; // Action was invoked
-};
-
-exports[&quot;action-timeout&quot;] = TimeoutWidget;
-
-})();</pre>
-</div>
-<div background="lightgray" border="2px solid gray;" created="20200723071051066" creator="tanaberh" datetime="DDD, MMM DDth, YYYY 0hh12:0mm:0ssam" hands="black" modified="20200723195043109" modifier="tanaberh" numbers="color:black; font-size:1.5em;" size="15em" title="TiddlyTools/Timer/Setup">
 <pre></pre>
 </div>
 <div created="20200713214642133" creator="tanaberh " modified="20200722000947244" modifier="tanaberh" tags="TroubleTicket" title="Trouble Tickets to Enter">
